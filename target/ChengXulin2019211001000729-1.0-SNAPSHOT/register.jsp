@@ -1,21 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 11797
-  Date: 2021/3/13
-  Time: 20:34
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@include file="/header.jsp"%>
-This is my JSP page.<br>
+This is my register JSP page.<br>
 <h1>New User Registration</h1>
-<form method="post" action="/2019211001000729ChengXulin_war_exploded/register">
-    <td> ID：<input type="text" name="id" ><br/></td>
-    <td> Username：<input type="text" name="Username" ><br/></td>
-    <td> password：<input type="password" name="password" ><br/> </td>
-    <td> Email：<input type="email" name="Email" ><br/> </td>
-    <td> Gender：<input type="radio" name="Gender" value="Male"/> Male <input type="radio" name="Gender" value="Female"/> Female<br/> </td>
-    <td> Date of Birth：</td> <td><input type="date" name="Date" ><br/> </td>
-<input type="submit" value="Register"/></b>
+<form method="post" action="Register">
+    <table>
+        ID：<input type="text" name="ID" required><br/>
+        Username：<input type="text" name="Username" required><br/>
+        password：<input type="password" name="password" required minlength="8"><br/>
+        Email：<input type="email" name="Email" required><br/>
+        Gender：<input type="radio" name="Gender" value="Male"/> Male <input type="radio" name="Gender" value="Female"/> Female
+        </td>
+        </tr>
+        Date of Birth：<input type="date" name="Date" required dataformatas="yyyy-dd-mm"><br/>
+        <input type="submit" value="register"/>
+    </table>
 </form>
 <%@include file="/footer.jsp"%>
 
