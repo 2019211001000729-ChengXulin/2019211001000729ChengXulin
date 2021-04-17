@@ -55,7 +55,8 @@ public class RegisterServlet extends HttpServlet {
         writer.close();*/
         String sql1="insert into Usertable values(?,?,?,?,?,?)";
         PreparedStatement pstmt= null;
-        try {
+        try
+        {
             pstmt = con.prepareStatement(sql1);
             pstmt.setString(1,ID);
             pstmt.setString(2,Username);
