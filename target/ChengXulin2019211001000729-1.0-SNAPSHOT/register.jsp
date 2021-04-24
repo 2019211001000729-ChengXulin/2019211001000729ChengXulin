@@ -1,8 +1,8 @@
 
-<%@include file="/header.jsp"%>
+<%@include file="WEB-INF/views/header.jsp"%>
 This is my register JSP page.<br>
 <h1>New User Registration</h1>
-<form method="post" action="Register">
+<form method="post" action="register">
     <table>
         ID：<input type="text" name="ID" required><br/>
         Username：<input type="text" name="Username" required><br/>
