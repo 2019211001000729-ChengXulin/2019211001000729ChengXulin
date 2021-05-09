@@ -34,17 +34,17 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ID=request.getParameter("ID");
-        String Username=request.getParameter("Username");
+        String Username=request.getParameter("username");
         String password=request.getParameter("password");
-        String Email=request.getParameter("Email");
-        String Gender=request.getParameter("Gender");
-        String Date=request.getParameter("Date");
+        String Email=request.getParameter("email");
+        String Gender=request.getParameter("gender");
+        String Date=request.getParameter("date");
 
         /*PrintWriter writer= response.getWriter();
         writer.println("<br>Username :"+Username);
@@ -65,11 +65,12 @@ public class RegisterServlet extends HttpServlet {
             pstmt.setString(5,Gender);
             pstmt.setString(6,Date);
             pstmt.executeUpdate();
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        /*response.setContentType("text/html");
+        /*
+        response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         out.println("<html>");
         out.println("<head><title>Register</title></head>");
@@ -96,7 +97,7 @@ public class RegisterServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        /*out.println("</table>");
+        out.println("</table>");
         out.println("</body>");
         out.println("</html>");*/
     }
