@@ -1,5 +1,5 @@
 package com.ChengXulin.model;
-//
+
 import java.io.InputStream;
 public class Product {
     private int  productId;
