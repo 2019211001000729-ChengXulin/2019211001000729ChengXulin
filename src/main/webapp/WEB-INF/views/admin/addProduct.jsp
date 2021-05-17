@@ -31,8 +31,7 @@
 										<option >-- Category --</option>
 											<!-- loop_start -->
 											
-										<option value=""></option>
-										
+
 										<!-- loop_end -->
 										
 										</select>
