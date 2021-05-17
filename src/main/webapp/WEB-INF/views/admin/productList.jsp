@@ -1,5 +1,5 @@
 <%@include file="../header.jsp" %>
-
+//
 <section id="cart_items">
 		<div class="container">
 		<div class="breadcrumbs">
