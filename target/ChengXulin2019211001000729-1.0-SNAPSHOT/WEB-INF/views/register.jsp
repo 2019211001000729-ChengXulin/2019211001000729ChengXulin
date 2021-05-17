@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
 <section id="form"><!--form-->
@@ -56,7 +57,7 @@
  <label> Gender </label><span> &nbsp;<input type="radio" 
 style="width: 15px; height: 15px; display:inline;" name="gender" value="male" checked/>&nbsp;Male&nbsp;<input type="radio" style="width: 15px; height: 15px;   display: inline;" name="gender" value="female"/>&nbsp;Female</span>
    <span></span>
-   <input type="date" name="birthdate" placeholder="Date of Birth (yyyy-mm-dd)">
+   <input type="date" name="date" placeholder="Date of Birth (yyyy-mm-dd)">
     <button type="submit" class="btn btn-default">Register</button>
 </form>
 					</div><!--/sign up form-->

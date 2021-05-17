@@ -32,7 +32,7 @@
 %>
 
 <form method="post" action="<%=basePath+"login"%>">
-    <input type="text" name="username" placeholder="Username" value="<%=username%>"><br>
+    <input type="text" name="username" placeholder="username" value="<%=username%>"><br>
    <input type="password" name="password" placeholder="password" value="<%=password%>">
     <br/>
     <span>
