@@ -1,4 +1,4 @@
 package com.ChengXulin.model;
 
-public class abc {
+public class abc {//
 }
