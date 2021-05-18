@@ -1,7 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../header.jsp"%>
-
+//
 <div id="contact-page" class="container">
 <div class="row">  	
 <div class="col-sm-2">
@@ -30,9 +30,7 @@
 				               	<select name="categoryId">
 										<option >-- Category --</option>
 											<!-- loop_start -->
-											
-										<option value=""></option>
-										
+
 										<!-- loop_end -->
 										
 										</select>

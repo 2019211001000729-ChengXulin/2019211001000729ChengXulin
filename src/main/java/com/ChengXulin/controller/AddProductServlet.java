@@ -32,7 +32,7 @@ public class AddProductServlet extends HttpServlet {
             throwables.printStackTrace();
         }
     }
-
+//
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productName=request.getParameter("productName");
