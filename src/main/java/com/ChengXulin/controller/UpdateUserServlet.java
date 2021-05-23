@@ -1,5 +1,4 @@
 package com.ChengXulin.controller;
-
 import com.ChengXulin.dao.UserDao;
 import com.ChengXulin.model.User;
 
@@ -22,15 +21,14 @@ public class UpdateUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int Id= Integer.parseInt(request.getParameter("Id"));
-        String Username=request.getParameter("Username");
+        int Id= Integer.parseInt(request.getParameter("id"));
+        String Username=request.getParameter("username");
         String password=request.getParameter("password");
-        String Email=request.getParameter("Email");
-        String Gender=request.getParameter("Gender");
+        String Email=request.getParameter("email");
+        String Gender=request.getParameter("gender");
         try {
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-            Date Date=sdf.parse(request.getParameter("Date"));
-            //System.out.println(Date);
+            Date Date=sdf.parse(request.getParameter("date"));
             User user=new User();
             user.setId(Id);
             user.setUsername(Username);
