@@ -1,14 +1,9 @@
 package com.ChengXulin.dao;
-////
 import com.ChengXulin.model.Product;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-//
+
 public class ProductDao implements  IProductDao{
     @Override
     public int save(Product product, Connection con) throws SQLException {
@@ -83,10 +78,9 @@ public class ProductDao implements  IProductDao{
         PreparedStatement pstmt= con.prepareStatement(sql);
         pstmt.setInt(1,categoryId);
         ResultSet rs= pstmt.executeQuery();
-        Product product=null;
         List<Product> pro=new ArrayList<Product>();
-        if(rs.next()){
-            product=new Product();
+        while(rs.next()){
+            Product product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
             product.setProductDescription(rs.getString("ProductDescription"));
@@ -105,10 +99,9 @@ public class ProductDao implements  IProductDao{
         pstmt.setDouble(1,minPrice);
         pstmt.setDouble(2,maxPrice);
         ResultSet rs= pstmt.executeQuery();
-        Product product=null;
         List<Product> pro=new ArrayList<Product>();
-        if(rs.next()){
-            product=new Product();
+        while(rs.next()){
+            Product product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
             product.setProductDescription(rs.getString("ProductDescription"));
@@ -125,10 +118,9 @@ public class ProductDao implements  IProductDao{
         String sql="select * from Product";
         PreparedStatement pstmt= con.prepareStatement(sql);
         ResultSet rs= pstmt.executeQuery();
-        Product product=null;
         List<Product> pro=new ArrayList<Product>();
-        if(rs.next()){
-            product=new Product();
+        while(rs.next()){
+            Product product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
             product.setProductDescription(rs.getString("ProductDescription"));
@@ -146,10 +138,9 @@ public class ProductDao implements  IProductDao{
         PreparedStatement pstmt= con.prepareStatement(sql);
         pstmt.setString(1,productName);
         ResultSet rs= pstmt.executeQuery();
-        Product product=null;
         List<Product> pro=new ArrayList<Product>();
-        if(rs.next()){
-            product=new Product();
+        while(rs.next()){
+            Product product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
             product.setProductDescription(rs.getString("ProductDescription"));
@@ -167,10 +158,9 @@ public class ProductDao implements  IProductDao{
         PreparedStatement pstmt= con.prepareStatement(sql);
         pstmt.setInt(1,productId);
         ResultSet rs= pstmt.executeQuery();
-        Product product=null;
         List<Product> pro=new ArrayList<Product>();
-        if(rs.next()){
-            product=new Product();
+        while(rs.next()){
+            Product product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
             product.setProductDescription(rs.getString("ProductDescription"));
@@ -180,5 +170,17 @@ public class ProductDao implements  IProductDao{
             pro.add(product);
         }
         return pro;
+    }
+    public byte[] getPictureById(Integer productId,Connection con) throws SQLException{
+        byte[] imgByte=null;
+        String sql="select picture from Product where ProductId=?";
+        PreparedStatement pstmt=con.prepareStatement(sql);
+        pstmt.setInt(1,productId);
+        ResultSet rs=pstmt.executeQuery();
+        while(rs.next()){
+            Blob blob=rs.getBlob("picture");
+            imgByte=blob.getBytes(1,(int)blob.length());
+        }
+        return imgByte;
     }
 }

@@ -24,7 +24,7 @@
                 <input type="radio" name="Gender" value="Female" <%="Female".equals(u.getGender())?"checked":""%>/> Female
             </td>
         </tr>
-        <tr> <td>Date of Birth:</td> <td><input type="date" name="Date" value="<%=u.getBirthdate()%>"><br/></td></tr>
+        <tr> <td>Date of Birth:</td> <td><input type="date" name="date" value="<%=u.getBirthdate()%>"><br/></td></tr>
         <tr> <td></td><td><input type="submit" value="Save Changes"/></td>  </tr>
     </table>
 </form>
