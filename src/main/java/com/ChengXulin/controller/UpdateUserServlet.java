@@ -21,11 +21,11 @@ public class UpdateUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int Id= Integer.parseInt(request.getParameter("id"));
-        String Username=request.getParameter("username");
+        int Id= Integer.parseInt(request.getParameter("Id"));
+        String Username=request.getParameter("Username");
         String password=request.getParameter("password");
-        String Email=request.getParameter("email");
-        String Gender=request.getParameter("gender");
+        String Email=request.getParameter("Email");
+        String Gender=request.getParameter("Gender");
         try {
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
             Date Date=sdf.parse(request.getParameter("date"));
@@ -44,7 +44,7 @@ public class UpdateUserServlet extends HttpServlet {
                     HttpSession session=request.getSession();
                     session.setMaxInactiveInterval(10);
                     session.setAttribute("user",user1);
-                    request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request, response);
+                    request.getRequestDispatcher("accountDetails").forward(request, response);
                 }
             } catch (SQLException throwable) {
                 throwable.printStackTrace();

@@ -29,6 +29,7 @@
     </c:forEach>
 </ul>
 <%-- todo 2 : use c:forEach to print list 1,3,5,7,9   --%>
+    pageContext.setAttribute("words", words);
 <h1> c:forEach loog to print 2,4,6,8,10</h1>
 <ul>
     <c:forEach var="i" begin="2" end="10" step="2">
