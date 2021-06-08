@@ -102,4 +102,15 @@
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>
+
+    <filter>
+        <filter-name>ChengXulinFilter</filter-name>
+        <filter-class>com.lab2.ChengXulinFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ChengXulinFilter</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+        <url-pattern>/lab2/validation.jsp</url-pattern>
+    </filter-mapping>
+
     </web-app>
